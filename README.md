@@ -1,5 +1,37 @@
 # MyBlog 个人博客
 
+### 2017.03.09 Fri.
+
+#### 完成图片分割效果插件
+
+###### animate-plugin
+
+>[背景图片来源](http://www.5iweb.com)
+
+添加插件方法：
+
+    $(container).sliceImage(imgURL,index,shadow,delay,props)
+    //container 图片所在容器
+    // imgURL 图片路径
+    // index animate-plugin.css在所有样式表中索引值
+    // shadow css属性box-shadow的值
+    // delay 各区域动画延时时间
+    // props 各区域属性，支持数组形式
+    // 区域全属性列表
+    {
+        "z-index":,
+        "top":,
+        "left":,
+        "width":,
+        "height":,
+        "background-position":,
+        "background-size":
+    }
+
+#### 修改index页浏览器版本支持
+
+判断浏览器是否支持css3属性“transition”从而向首页或错误页的跳转。
+
 ### 2017.03.08 Wed.
 
 #### 个人博客正式开工

@@ -1,0 +1,37 @@
+.p-glass{
+	position:absolute;
+	z-index:-9999;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.p-glass>span{
+	position:absolute;
+	box-shadow:0 0 0 #000000;
+	background:url(../img/background.png) 0 0 no-repeat;
+	-webkit-transition:width .6s,height .6s,left .6s,top .6s,box-shadow .6s;
+	-moz-transition:width .6s,height .6s,left .6s,top .6s,box-shadow .6s;
+	-o-transition:width .6s,height .6s,left .6s,top .6s,box-shadow .6s;
+	transition:width .6s,height .6s,left .6s,top .6s,box-shadow .6s;
+}
+.p-glass>span:nth-child(1){}
+.p-glass-active>span:nth-child(1){}
+.p-glass>span:nth-child(2){}
+.p-glass-active>span:nth-child(2){}
+.p-glass>span:nth-child(3){}
+.p-glass-active>span:nth-child(3){}
+.p-glass>span:nth-child(4){}
+.p-glass-active>span:nth-child(4){}
+.p-glass>span:nth-child(5){}
+.p-glass-active>span:nth-child(5){}
+.p-glass>span:nth-child(6){}
+.p-glass-active>span:nth-child(6){}
+.p-glass>span:nth-child(7){}
+.p-glass-active>span:nth-child(7){}
+.p-glass>span:nth-child(8){}
+.p-glass-active>span:nth-child(8){}
+.p-glass>span:nth-child(9){}
+.p-glass-active>span:nth-child(9){}
+.p-glass>span:nth-child(10){}
+.p-glass-active>span:nth-child(10){}
