@@ -4,8 +4,25 @@
 	background:url(../img/background.png) 0 0 no-repeat;
 	transition:width .6s,height .6s,left .6s,top .6s,box-shadow .6s;
 }
+.nav{
+	opacity:0;
+	position:absolute;
+	transition:opacity .6s;
+}
+.home-loaded>.nav,
+.article-loaded>.nav,
+.work-loaded>.nav,
+.message-loaded>.nav,
+.contact-loaded>.nav{
+	opacity:1;
+	transition-delay:.6s;
+}
+.nav>span{
+	cursor:pointer;
+}
 /*Home*/
-.home .background>span:nth-child(1){
+/*background*/
+.home>.background>span:nth-child(1){
 	z-index:4;
 	top:0;
 	left:35%;
@@ -14,7 +31,7 @@
 	background:url(../img/background.png) 63.64% 0 no-repeat;
 	background-size:222.22% 142.86%;
 }
-.home-loaded .background>span:nth-child(1){
+.home-loaded>.background>span:nth-child(1){
 	top:-1%;
 	left:34%;
 	width:47%;
@@ -22,7 +39,7 @@
 	box-shadow:0 0 30px #000000;
 	transition-delay:0s;
 }
-.home .background>span:nth-child(2){
+.home>.background>span:nth-child(2){
 	z-index:3;
 	top:0;
 	left:12%;
@@ -31,7 +48,7 @@
 	background:url(../img/background.png) 17.14% 0 no-repeat;
 	background-size:333.33% 222.22%;
 }
-.home-loaded .background>span:nth-child(2){
+.home-loaded>.background>span:nth-child(2){
 	top:-1%;
 	left:11%;
 	width:32%;
@@ -39,7 +56,7 @@
 	box-shadow:0 0 30px #000000;
 	transition-delay:.2s;
 }
-.home .background>span:nth-child(3){
+.home>.background>span:nth-child(3){
 	z-index:2;
 	top:40%;
 	left:68%;
@@ -48,7 +65,7 @@
 	background:url(../img/background.png) 100% 100% no-repeat;
 	background-size:312.5% 166.67%;
 }
-.home-loaded .background>span:nth-child(3){
+.home-loaded>.background>span:nth-child(3){
 	top:39%;
 	left:67%;
 	width:34%;
@@ -56,7 +73,7 @@
 	box-shadow:0 0 30px #000000;
 	transition-delay:.4s;
 }
-.home .background>span:nth-child(4){
+.home>.background>span:nth-child(4){
 	z-index:1;
 	top:30%;
 	left:0;
@@ -65,7 +82,7 @@
 	background:url(../img/background.png) 0 85.71% no-repeat;
 	background-size:400% 153.85%;
 }
-.home-loaded .background>span:nth-child(4){
+.home-loaded>.background>span:nth-child(4){
 	top:29%;
 	left:-1%;
 	width:27%;
@@ -73,8 +90,34 @@
 	box-shadow:0 0 30px #000000;
 	transition-delay:.6s;
 }
+/*nav*/
+.home>.nav{
+	top:40%;
+	width:100%;
+	height:50%;
+}
+.home>.nav>.nav-bt{
+	position:relative;
+	display:block;
+	left:calc(50% - 80px);
+	width:160px;
+	height:40px;
+	margin-bottom:20px;
+	overflow:hidden;
+}
+.home>.nav>.nav-bt>.head{
+	position:relative;
+	width:160px;
+	height:40px;
+	text-align:center;
+	line-height:36px;
+	font-size:20px;
+	color:#ffffff;
+	border:#ffffff 2px solid;
+}
 /*Contact*/
-.contact .background>span:nth-child(1){
+/*background*/
+.contact>.background>span:nth-child(1){
 	top:0;
 	left:0;
 	width:46%;
@@ -82,7 +125,7 @@
 	background:url(../img/background.png) 0 0 no-repeat;
 	background-size:217.39% 333.33%;
 }
-.contact-loaded .background>span:nth-child(1){
+.contact-loaded>.background>span:nth-child(1){
 	top:-1%;
 	left:-1%;
 	width:48%;
@@ -90,39 +133,7 @@
 	box-shadow:0 0 30px #000000;
 	transition-delay:0s;
 }
-.contact .background>span:nth-child(2){
-	top:0;
-	left:54%;
-	width:46%;
-	height:30%;
-	background:url(../img/background.png) 100% 0 no-repeat;
-	background-size:217.39% 333.33%;
-}
-.contact-loaded .background>span:nth-child(2){
-	top:-1%;
-	left:53%;
-	width:48%;
-	height:32%;
-	box-shadow:0 0 30px #000000;
-	transition-delay:.2s;
-}
-.contact .background>span:nth-child(3){
-	top:50%;
-	left:0;
-	width:32%;
-	height:50%;
-	background:url(../img/background.png) 0 100% no-repeat;
-	background-size:312.5% 200%;
-}
-.contact-loaded .background>span:nth-child(3){
-	top:49%;
-	left:-1%;
-	width:34%;
-	height:52%;
-	box-shadow:0 0 30px #000000;
-	transition-delay:.4s;
-}
-.contact .background>span:nth-child(4){
+.contact>.background>span:nth-child(2){
 	top:50%;
 	left:68%;
 	width:32%;
@@ -130,11 +141,43 @@
 	background:url(../img/background.png) 100% 100% no-repeat;
 	background-size:312.5% 200%;
 }
-.contact-loaded .background>span:nth-child(4){
+.contact-loaded>.background>span:nth-child(2){
 	top:49%;
 	left:67%;
 	width:34%;
 	height:52%;
+	box-shadow:0 0 30px #000000;
+	transition-delay:.2s;
+}
+.contact>.background>span:nth-child(3){
+	top:50%;
+	left:0;
+	width:32%;
+	height:50%;
+	background:url(../img/background.png) 0 100% no-repeat;
+	background-size:312.5% 200%;
+}
+.contact-loaded>.background>span:nth-child(3){
+	top:49%;
+	left:-1%;
+	width:34%;
+	height:52%;
+	box-shadow:0 0 30px #000000;
+	transition-delay:.4s;
+}
+.contact>.background>span:nth-child(4){
+	top:0;
+	left:54%;
+	width:46%;
+	height:30%;
+	background:url(../img/background.png) 100% 0 no-repeat;
+	background-size:217.39% 333.33%;
+}
+.contact-loaded>.background>span:nth-child(4){
+	top:-1%;
+	left:53%;
+	width:48%;
+	height:32%;
 	box-shadow:0 0 30px #000000;
 	transition-delay:.6s;
 }
