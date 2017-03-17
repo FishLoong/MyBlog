@@ -7,6 +7,7 @@
 .nav{
 	opacity:0;
 	position:absolute;
+	font-weight:600;
 	transition:opacity .6s;
 }
 .home-loaded>.nav,
@@ -93,6 +94,34 @@
 	box-shadow:0 0 30px #000000;
 	transition-delay:.6s;
 }
+/*Title*/
+.home>.title{
+	opacity:0;
+	position:absolute;
+	top:15%;
+	width:100%;
+	height:120px;
+	text-align:center;
+	line-height:120px;
+	font-size:108px;
+	font-weight:600;
+	color:#ffffff;
+	transition:opacity .6s;
+}
+.home-loaded>.title{
+	opacity:1;
+	transition-delay:.6s;
+}
+.home>.title>span{
+	width:60px;
+	height:120px;
+	margin:0 10px;
+	transition:margin .6s;
+}
+.home-loaded>.title>span{
+	margin:0 5px;
+	transition-delay:.6s;
+}
 /*Nav*/
 .home>.nav{
 	top:40%;
@@ -109,7 +138,7 @@
 	overflow:hidden;
 }
 .home>.nav>.nav-bt:nth-child(1){
-	transition:left 1s .8s,width 1s .8s;
+	transition:left 1s .2s,width 1s .2s;
 }
 .home>.nav>.nav-bt:nth-child(2),
 .home>.nav>.nav-bt:nth-child(3),
@@ -130,7 +159,7 @@
 	border:#ffffff 2px solid;
 }
 .home>.nav>.nav-bt:nth-child(1)>.head{
-	transition:width 1s .8s,border 1s .8s;
+	transition:width 1s .2s,border 1s .2s;
 }
 .home>.nav>.nav-bt:nth-child(2)>.head,
 .home>.nav>.nav-bt:nth-child(3)>.head,
@@ -145,7 +174,7 @@
 	opacity:1;
 }
 .home>.nav>.nav-bt:nth-child(1)>.head>.text{
-	transition:opacity .6s .8s;
+	transition:opacity .6s .2s;
 }
 .home>.nav>.nav-bt:nth-child(2)>.head>.text,
 .home>.nav>.nav-bt:nth-child(3)>.head>.text,
@@ -163,7 +192,7 @@
 	margin:auto;
 }
 .home>.nav>.nav-bt:nth-child(1)>.head>.image{
-	transition:opacity .4s .8s,left 1s .8s;
+	transition:opacity .4s .2s,left 1s .2s;
 }
 .home>.nav>.nav-bt:nth-child(2)>.head>.image,
 .home>.nav>.nav-bt:nth-child(3)>.head>.image,
@@ -228,9 +257,10 @@
 	width:0;
 	background-color:rgba(0,0,0,0.4);
 	overflow:hidden;
+	font-weight:400;
 }
 .home>.nav>.nav-bt:nth-child(1)>.tail{
-	transition:left 1s .8s,width 1s .8s;
+	transition:left 1s .2s,width 1s .2s;
 }
 .home>.nav>.nav-bt:nth-child(2)>.tail,
 .home>.nav>.nav-bt:nth-child(3)>.tail,
@@ -249,7 +279,7 @@
 	color:#ffffff;
 }
 .home>.nav>.nav-bt:nth-child(1)>.tail>span{
-	transition:opacity .4s 1.7s;
+	transition:opacity .4s 1.1s;
 }
 .home>.nav>.nav-bt:nth-child(2)>.tail>span,
 .home>.nav>.nav-bt:nth-child(3)>.tail>span,
@@ -333,6 +363,34 @@
 	width:48%;
 	height:32%;
 	box-shadow:0 0 30px #000000;
+	transition-delay:.6s;
+}
+/*Title*/
+.contact>.title{
+	opacity:0;
+	position:absolute;
+	top:10%;
+	width:100%;
+	height:100px;
+	text-align:center;
+	line-height:100px;
+	font-size:96px;
+	font-weight:600;
+	color:#ffffff;
+	transition:opacity .6s;
+}
+.contact-loaded>.title{
+	opacity:1;
+	transition-delay:.6s;
+}
+.contact>.title>span{
+	width:60px;
+	height:100px;
+	margin:0 10px;
+	transition:margin .6s;
+}
+.contact-loaded>.title>span{
+	margin:0 5px;
 	transition-delay:.6s;
 }
 /*Nav*/
@@ -446,4 +504,13 @@
 }
 .contact>.nav>.nav-bt-this>span{
 	opacity:0;
+}
+/*Main*/
+.contact>.main{
+	position:absolute;
+	top:50%;
+	left:35%;
+	width:30%;
+	font-size:24px;
+	color:#ffffff;
 }

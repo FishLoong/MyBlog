@@ -1,7 +1,5 @@
-if(!(!!window.ActiveXObject || "ActiveXObject" in window)){
-	window.pageIndex=["home","article","work","message","contact"];
+if(!(!!window.ActiveXObject||"ActiveXObject" in window)){
 	window.onload=function(){
-		console.log(new Date()-t);
 		if("pushState" in history){
 			$(window).on("popstate",function(){
 				var state=history.state;
@@ -10,10 +8,9 @@ if(!(!!window.ActiveXObject || "ActiveXObject" in window)){
 					var delClass=$container.attr("class").split(" ")[2];
 					$container.removeClass(delClass);
 					setTimeout(function(){
-						if(fish.initModule(state)){
+						if(fish.init.initModule(state)){
 							setTimeout(function(){
-								$container.addClass(state+"-loaded");
-								$(".nav-bt").eq(pageIndex.indexOf(state)).addClass("nav-bt-this");
+								fish.init.initAnimate(state);
 							},500);
 						}
 					},1000);
@@ -21,11 +18,9 @@ if(!(!!window.ActiveXObject || "ActiveXObject" in window)){
 			});
 			history.pushState("home","","fish.html");
 		}
-		if(fish.initModule("home")){
+		if(fish.init.initModule("home")){
 			setTimeout(function(){
-				console.log(new Date()-t);
-				$(".container").addClass("home-loaded");
-				$(".nav-bt").eq(0).addClass("nav-bt-this");
+				fish.init.initAnimate("home");
 			},700);
 		}
 	}
