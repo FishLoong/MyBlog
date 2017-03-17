@@ -36,3 +36,20 @@ body{
 	font-size:12px;
 	color:#f4f4f4;
 }
+.cover{
+	z-index:9999;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	transition:z-index 0s;
+}
+.home-loaded+.cover,
+.article-loaded+.cover,
+.work-loaded+.cover,
+.message-loaded+.cover,
+.contact-loaded+.cover{
+	z-index:-9999;
+	transition-delay:1.2s;
+}
