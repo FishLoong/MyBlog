@@ -100,15 +100,15 @@ $(function(global){
 					var info={
 						"Ch-Name:":"龙泽铭",
 						"En-Name:":"Jeremy Loong",
-						"E-mail :":"longzeming1996@gmail.com",
-						"GitHub :":"github.com/FishLoong"
+						"E-mail:":"longzeming1996@gmail.com",
+						"GitHub:":"github.com/FishLoong"
 					};
 					$main=$("<section class='main'></section>");
 					for(var i in info){
-						var $item=$("<div></div>");
+						var $item=$("<div class='item'></div>");
 						$item.html("" +
 							"<span class='head'>"+i+"</span>" +
-							"<span>"+(i==="GitHub :"?"<a href='https://"+info[i]+"'>"+info[i]+"</a>":info[i])+"</span>")
+							"<span class='tail'>"+(i==="GitHub :"?"<a href='https://"+info[i]+"' target='_blank'>"+info[i]+"</a>":info[i])+"</span>")
 						$main.append($item);
 					}
 					break;
