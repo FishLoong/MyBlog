@@ -1,7 +1,7 @@
 $(function(global){
 	global.fish={};
 	fish.init=(function($){
-		var spanOfBackground={"home":4,"contact":4},
+		var spanOfBackground={"home":4,"article":4,"work":5,"message":5,"contact":5},
 			titleStyleIndex={"home":1,"article":2,"work":2,"message":2,"contact":1},
 			btStyleIndex={"home":1,"article":2,"work":2,"message":2,"contact":3},
 			btName=["Home","Article","Work","Message","Contact"],
@@ -108,7 +108,7 @@ $(function(global){
 						var $item=$("<div class='item'></div>");
 						$item.html("" +
 							"<span class='head'>"+i+"</span>" +
-							"<span class='tail'>"+(i==="GitHub :"?"<a href='https://"+info[i]+"' target='_blank'>"+info[i]+"</a>":info[i])+"</span>")
+							"<span class='tail'>"+(i==="GitHub:"?"<a href='https://"+info[i]+"' target='_blank'>"+info[i]+"</a>":info[i])+"</span>");
 						$main.append($item);
 					}
 					break;
