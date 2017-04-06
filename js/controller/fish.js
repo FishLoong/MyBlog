@@ -1,7 +1,80 @@
-$(function(global){
-	global.fish={};
-	fish.init=(function($){
-		var spanOfBackground={"home":4,"article":4,"work":5,"message":5,"contact":5},
+$(function(global,$){
+	var fish=global.fish={};
+	// 页面的动态交互
+	fish.view=(function(){
+		// work页主体内容
+		var workMain=function(){
+			var $main=$("<section class='main'></section>"),
+				$title=$("#main-title"),
+				$download=$("#main-download");
+			function init(){
+				var $left=$("<span class='left'></span>"),
+					$right=$("<span class='right'></span>"),
+					// 数据结构
+					Item=function(imgURL,title,id){
+						var $item=$("<div class='item'></div>");
+						$item.html("" +
+							"<img src='"+imgURL+"' alt='"+title+"'>" +
+							"<p>"+title+"</p>");
+						$item.on("click",function(){
+						});
+						return $item;
+					};
+				// 页面框架
+				// 目录页左边的切换按钮
+				$left.html("" +
+					"<div class='toggle toggle-active' id='bt-project'>项目</div>" +
+					"<div class='toggle' id='bt-effect'>特效</div>" +
+					"<span class='underline'></span>");
+				// 右边
+				$right.html("" +
+					"<div class='toggle toggle-active' id='ct-project'></div>" +
+					"<div class='toggle' id='ct-effect'></div>");
+				// 事件监听
+				// 切换点击事件
+				$left.find(".toggle").on("click",function(){
+					var $this=$(this),
+						$other=$left.find(".toggle").eq(!$left.find(".toggle").index($this)),
+						$underline=$(".underline");
+					// 显示变化
+					if(!$this.hasClass("toggle-active")){
+						$this.addClass("toggle-active");
+						$other.removeClass("toggle-active");
+						if($underline.hasClass("underline-2")){
+							$underline.removeClass("underline-2");
+						}
+						else{
+							$underline.addClass("underline-2");
+						}
+					}
+					alert($this.attr("id"));
+					// 数据变化
+					$.ajax({
+						url:"php/work.php",
+						type:"post",
+						contentType:"application/x-www-form-urlencoded;charset=utf-8",
+						data:{
+							"type":$this.attr("id")
+						},
+						success:function(msg){
+							console.log(msg);
+						}
+					})
+				});
+				$main.append($left).append($right);
+			}
+			init();
+			$main.on("transitionend",function(){
+			});
+			return $main;
+		};
+		return{
+			workMain:workMain
+		}
+	}());
+	// 页面初始化
+	fish.init=(function(){
+		var spanOfBackground={"home":4,"article":4,"work":3,"message":5,"contact":5},
 			titleStyleIndex={"home":1,"article":2,"work":2,"message":2,"contact":1},
 			btStyleIndex={"home":1,"article":2,"work":2,"message":2,"contact":3},
 			btName=["Home","Article","Work","Message","Contact"],
@@ -29,6 +102,29 @@ $(function(global){
 					break;
 			}
 		};
+		// 背景分割特效生成器
+		var backgroundFactory=function(page){
+			var $background=$("<section class='background'></section>");
+			for(var i=0,n=spanOfBackground[page];i<n;i++){
+				$background.append($("<span></span>"));
+			}
+			if(page==="work"){
+				var $title=$("<span class='title'></span>"),
+					$download=$("<span class='download'></span>");
+				$title.html("" +
+					"<span>" +
+						"<span id='main-title'></span>" +
+						"<span id='main-back'></span>" +
+					"</span>");
+				$download.html("" +
+					"<span>" +
+						"<span class='main-download'></span>" +
+					"</span>");
+				$background.append($title).append($("<span class='download' id='main-download'></span>"));
+			}
+			return $background;
+		};
+		// 标题生成器
 		var titleFactory=function(index){
 			var $title=$("<section class='title'></section>");
 			switch(index){
@@ -39,10 +135,12 @@ $(function(global){
 					}
 					break;
 				case 2:
+					$title.append($("<span>Fish</span><span>Loong</span>"))
 					break;
 			}
 			return $title;
 		};
+		// 导航按钮生成器
 		var buttonFactory=function(index,content,flag){
 			var $nav=$("<span class='nav-bt'></span>");
 			var $container=$(".container");
@@ -84,6 +182,8 @@ $(function(global){
 			}
 			return $nav;
 		};
+		// 主体部分生成器
+		// 调用对应页的主体生成
 		var mainFactory=function(page){
 			var $main;
 			switch(page){
@@ -91,30 +191,34 @@ $(function(global){
 					$main="";
 					break;
 				case "article":
+					$main=$("<section class='main'></section>");
 					break;
 				case "work":
+					$main=fish.view.workMain();
 					break;
 				case "message":
+					$main=$("<section class='main'></section>");
 					break;
 				case "contact":
 					var info={
 						"Ch-Name:":"龙泽铭",
 						"En-Name:":"Jeremy Loong",
 						"E-mail:":"longzeming1996@gmail.com",
-						"GitHub:":"github.com/FishLoong"
+						"GitHub:":"FishLoong"
 					};
 					$main=$("<section class='main'></section>");
 					for(var i in info){
 						var $item=$("<div class='item'></div>");
 						$item.html("" +
 							"<span class='head'>"+i+"</span>" +
-							"<span class='tail'>"+(i==="GitHub:"?"<a href='https://"+info[i]+"' target='_blank'>"+info[i]+"</a>":info[i])+"</span>");
+							"<span class='tail'>"+(i==="GitHub:"?"<a href='https://github.com/"+info[i]+"' target='_blank'>"+info[i]+"</a>":info[i])+"</span>");
 						$main.append($item);
 					}
 					break;
 			}
 			return $main;
 		};
+		// 初始化函数
 		var initModule=function(page){
 			// 除组件以外其他元素的初始化
 			var Page=page[0].toUpperCase()+page.substring(1,page.length);
@@ -125,10 +229,7 @@ $(function(global){
 				var $container=$(".container"),
 					$background,$title,$nav,$main,$copyright;
 				// 背景
-				$background=$("<section class='background'></section>");
-				for(var i=0,n=spanOfBackground[page];i<n;i++){
-					$background.append($("<span></span>"));
-				}
+				$background=backgroundFactory(page);
 				// 标题
 				$title=titleFactory(titleStyleIndex[page]);
 				// 导航栏（按钮）
@@ -154,5 +255,5 @@ $(function(global){
 			initModule:initModule,
 			initAnimate:initAnimate
 		}
-	}(jQuery));
-}(window));
+	}());
+}(window,jQuery));

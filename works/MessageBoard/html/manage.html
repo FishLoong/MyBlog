@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="copyright" content="Yiban HNU">
+    <meta name="front-end author" content="Jeremy Loong">
+    <meta name="version" content="3.1 1/2/2017">
+    <title>信息管理</title>
+    <!--All-->
+    <link rel="stylesheet" href="../css/style.css">
+    <!--This-->
+    <link rel="stylesheet" href="../css/manage-style.css">
+    <!--Animate-->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!--Frame-->
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/Yiban.min.js"></script>
+</head>
+<body>
+<div class="nav"><a href="publish.html">信息发布</a></div>
+<div class="nav"><p>信息管理</p></div>
+<div class="main">
+    <div class="logo"><img src="../img/logo.png" alt="易班logo"></div>
+    <form class="form" id="publish-form" action="#" method="post">
+        <p id="form-title">信息搜索</p>
+        <input type="text" id="title" name="title">
+        <input type="text" id="date" name="date" readonly>
+        <input type="text" id="place" name="place" readonly>
+        <div id="classes">
+            <label for="radio-message">
+                <input type="radio" name="classes" id="radio-message" checked value="message">
+                <span>通知板</span><span class="radio"></span>
+            </label>
+            <label for="radio-employ">
+                <input type="radio" name="classes" id="radio-employ" value="employ">
+                <span>就业板</span><span class="radio"></span>
+            </label>
+        </div>
+        <div id="subclasses">
+            <label for="radio-practice">
+                <input type="radio" name="subclasses" id="radio-practice" disabled="disabled" value="practice">
+                <span>实习生</span><span class="radio"></span>
+            </label>
+            <label for="radio-school">
+                <input type="radio" name="subclasses" id="radio-school" disabled="disabled" value="school">
+                <span>校内</span><span class="radio"></span>
+            </label>
+            <label for="radio-online">
+                <input type="radio" name="subclasses" id="radio-online" disabled="disabled" value="online">
+                <span>在线</span><span class="radio"></span>
+            </label>
+        </div>
+        <input type="text" id="link" name="link">
+        <p class="remind"></p>
+        <span class="inf-display"><span>
+            <span id="inf-list"></span>
+            <span id="inf-btn">
+                <span id="btn-previous"></span><!--
+                --><span id="page">1</span><!--
+                --><span id="btn-next"></span>
+            </span>
+        </span></span>
+        <input type="image" id="search-submit" src="../img/SEARCH_btn.png">
+    </form>
+</div>
+<!--Module-->
+<script type="text/javascript" src="../js/module.js"></script>
+<!--This-->
+<script type="text/javascript" src="../js/manage-script.js"></script>
+</body>
+</html>

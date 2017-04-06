@@ -1,0 +1,77 @@
+/*Work*/
+.work>.background>.title{
+	z-index:2;
+	top:20%;
+	left:80%;
+	width:6%;
+	height:60%;
+	background:url(../img/background.png) 85.11% 50% no-repeat;
+	background-size:1666.67% 166.67%;
+}
+.work>.background>.title-show{
+	top:19%;
+	left:79%;
+	width:8%;
+	height:62%;
+	box-shadow:0 0 30px #000000;
+}
+.work>.background>.download{
+	z-index:1;
+	top:45%;
+	left:86%;
+	width:10%;
+	height:8%;
+	background:url(../img/background.png) 95.56% 48.91% no-repeat;
+	background-size:1000% 1250%;
+}
+.work>.background>.download-show{
+	top:44%;
+	left:85%;
+	width:12%;
+	height:10%;
+	box-shadow:0 0 30px #000000;
+}
+/*切换按钮*/
+.work>.main>.left{
+	position:relative;
+	top:5%;
+	width:100px;
+	height:85%;
+	border-right:rgba(0,0,0,.2) 2px solid;
+	font-size:30px;
+	color:#ffffff;
+}
+.left>.toggle{
+	position:relative;
+	width:70px;
+	height:50%;
+	margin:0 15px;
+	writing-mode:vertical-rl;
+	text-align:center;
+	letter-spacing:20px;
+	line-height:70px;
+	cursor:pointer;
+	transition:color .4s;
+}
+.left>.toggle:nth-child(1){
+	border-bottom:rgba(0,0,0,.2) 1px solid;
+}
+.left>.toggle:nth-child(2){
+	border-top:rgba(0,0,0,.2) 1px solid;
+}
+.left>.toggle-active{
+	color:#66ffff;
+	cursor:default;
+}
+.underline{
+	position:absolute;
+	top:5%;
+	left:98px;
+	width:2px;
+	height:40%;
+	background-color:#66ffff;
+	transition:top .4s;
+}
+.underline-2{
+	top:55%;
+}

@@ -1,0 +1,97 @@
+@charset "utf-8";
+/*login*/
+#login-submit{
+    -webkit-transition:width .3s;
+    -moz-transition:width .3s;
+    transition:width .3s;
+}
+#login-submit:hover{
+    width:110px;
+}
+.remind-error{
+    opacity:1;
+    margin-top:10px;
+    -webkit-transition:opacity .3s,margin-top .3s;
+    -moz-transition:opacity .3s,margin-top .3s;
+    transition:opacity .3s,margin-top .3s;
+}
+/*publish*/
+.main{
+    -webkit-transition:width .8s .3s,left .8s .3s;
+    -moz-transition:width .8s .3s,left .8s .3s;
+    transition:width .8s .3s,left .8s .3s;
+}
+.main-open{
+    left:calc(50% - 600px);
+    width:1200px;
+}
+.nav{
+    -webkit-transition:left .8s .3s;
+    -moz-transition:left .8s .3s;
+    transition:left .8s .3s;
+}
+.nav-open{
+    left:calc(50% - 640px);
+}
+.nav a{
+    -webkit-transition:width .3s,left .3s,line-height .3s;
+    -moz-transition:width .3s,left .3s,line-height .3s;
+    transition:width .3s,left .3s,line-height .3s;
+}
+.nav a:hover{
+    width:50px;
+    left:-10px;
+    line-height:50px;
+}
+.switch-background{
+    -webkit-transition:background-color .2s .1s;
+    -moz-transition:background-color .2s .1s;
+    transition:background-color .2s .1s;
+}
+.switch-background-open{
+    background-color:#ff5757;
+}
+.switch-button{
+    -webkit-transition:left .3s,border .3s;
+    -moz-transition:left .3s,border .3s;
+    transition:left .3s,border .3s;
+}
+.switch-background-open{
+    background-color:#ff5757;
+}
+.content-edit{
+    -webkit-transition:width .8s .3s;
+    -moz-transition:width .8s .3s;
+    transition:width .8s .3s;
+}
+.content-edit-open{
+    width:550px;
+}
+/*board*/
+.cover{
+    -webkit-transition:opacity .2s .3s,visibility 0s .5s;
+    -moz-transition:opacity .2s .3s,visibility 0s .5s;
+    -o-transition:opacity .2s .3s,visibility 0s .5s;
+    transition:opacity .2s .3s,visibility 0s .5s;
+}
+.cover-show{
+    visibility:visible;
+    opacity:1;
+    -webkit-transition:opacity .2s,visibility 0s;
+    -moz-transition:opacity .2s,visibility 0s;
+    -o-transition:opacity .2s,visibility 0s;
+    transition:opacity .2s,visibility 0s;
+}
+.menu{
+    -webkit-transition:width .5s;
+    -moz-transition:width .5s;
+    -o-transition:width .5s;
+    transition:width .5s;
+}
+.menu-show{
+    width:60%;
+    -webkit-transition:width .5s .2s;
+    -moz-transition:width .5s .2s;
+    -o-transition:width .5s .2s;
+    transition:width .5s .2s;
+}

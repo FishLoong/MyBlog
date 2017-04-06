@@ -1,0 +1,227 @@
+@charset "utf-8";
+.main{
+    position:absolute;
+    left:calc(50% - 325px);
+    top:0;
+    bottom:0;
+    margin:auto;
+    width:650px;
+    height:600px;
+}
+.main>*{
+    position:relative;
+    top:50px;
+}
+.logo{
+    height:110px;
+}
+.logo img{
+    position:absolute;
+    left:200px;
+    width:250px;
+}
+.nav{
+    position:absolute;
+    left:calc(50% - 365px);
+    width:40px;
+}
+.nav:nth-child(1){
+    top:calc(50% - 280px);
+}
+.nav:nth-child(2){
+    top:calc(50% - 165px);
+}
+.nav>*{
+    position:relative;
+    left:0;
+    width:40px;
+    height:110px;
+    border:none;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    line-height:40px;
+    letter-spacing:2px;
+    writing-mode:vertical-rl;
+    text-align:center;
+    font-size:16px;
+    font-weight:600;
+}
+.nav p{
+    z-index:10;
+    background-color:#ebebeb;
+    color:#959595;
+    cursor:default;
+}
+.nav a{
+    background-color:#ab4b4b;
+    color:#f4f4f4;
+    text-decoration:none;
+}
+.form{
+    position:relative;
+    left:50px;
+    width:530px;
+    height:350px;
+    margin-top:20px;
+    border:none;
+    border-radius:5px;
+    background-color:#e6e6e6;
+    box-shadow:#888888 0 0 10px;
+    overflow:visible;
+    padding:10px;
+}
+.form>*{
+    position:relative;
+    height:35px;
+    margin:3px 0;
+    box-sizing:border-box;
+    text-align:left;
+    line-height:35px;
+    padding:0 10px;
+}
+#form-title{
+    height:50px;
+    text-align:center;
+    line-height:50px;
+    font-size:18px;
+    color:#686868;
+    text-shadow:#686868 0 0 1px;
+}
+.form>[type="text"]{
+    width:100%;
+    border:#ffffff groove 2px;
+    border-radius:5px;
+}
+input[type="text"]:not([readonly])::-webkit-input-placeholder{
+    color:#707070;
+}
+input[type="text"]:not([readonly]):-moz-placeholder{
+    color:#707070;
+}
+label>[type="radio"]+*{
+    color:#686868;
+}
+label>[disabled]+*{
+    color:#a8a8a8;
+}
+label{
+    position:relative;
+    display:inline-block;
+    width:50px;
+    height:30px;
+    margin-right:60px;
+    line-height:30px;
+}
+label>[type="radio"]{
+    display:none;
+}
+label>.radio{
+    position:absolute;
+    left:120%;
+    top:0;
+    bottom:0;
+    width:18px;
+    height:18px;
+    margin:auto;
+    box-sizing:border-box;
+    border:#686868 solid 2px;
+    border-radius:10px;
+    background:none;
+    cursor:pointer;
+}
+label>[disabled]+span+.radio{
+    cursor:default;
+}
+label>[checked]+span+.radio{
+    border:#ff3333 solid 2px;
+}
+label>[checked]+span+.radio:after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:10px;
+    height:10px;
+    margin:auto;
+    border:none;
+    border-radius:5px;
+    background-color:#ff3333;
+}
+label>[disabled]+span+.radio{
+    border:#a8a8a8 solid 2px;
+}
+#switch{
+    width:100%;
+    height:30px;
+    color:#686868;
+}
+#switch *{
+    position:absolute;
+    cursor:pointer;
+}
+.switch-background{
+    margin-left:10px;
+    top:10px;
+    width:35px;
+    height:10px;
+    border:none;
+    border-radius:5px;
+    background-color:#b8b8b8;
+}
+.switch-button{
+    left:0;
+    top:-5px;
+    width:20px;
+    height:20px;
+    box-sizing:border-box;
+    border:none;
+    border-radius:10px;
+    background-color:#f4f4f4;
+    box-shadow:#4f4f4f 1px 0 1px;
+}
+.switch-button-open{
+    left:15px;
+    border:#ff5757 solid 1px;
+}
+.content-edit{
+    position:absolute;
+    left:100%;
+    top:-160px;
+    width:0;
+    height:560px;
+    background-color:#e6e6e6;
+    box-shadow:#888888 2px 0 10px;
+    overflow:hidden;
+    padding:0;
+}
+#textarea{
+    width:530px;
+    height:540px;
+    margin:10px;
+    box-sizing:border-box;
+    border:#ffffff groove 2px;
+    border-radius:5px;
+    background-color:#f4f4f4;
+    overflow-y:scroll;
+    line-height:20px;
+    padding:10px;
+    color:#aeaeae;
+}
+#publish-submit{
+    position:absolute;
+    right:30px;
+    bottom:-20px;
+    width:110px;
+}
+.remind{
+    position:relative;
+    opacity:0;
+    height:14px;
+    margin-top:0;
+    text-align:center;
+    line-height:14px;
+    font-weight:600;
+    color:#D54E42;
+}

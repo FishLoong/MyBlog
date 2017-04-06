@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="copyright" content="Yiban HNU">
+    <meta name="front-end author" content="Jeremy Loong">
+    <meta name="version" content="3.1 1/2/2017">
+    <title>管理员登录</title>
+    <!--All-->
+    <link rel="stylesheet" href="../css/style.css">
+    <!--This-->
+    <link rel="stylesheet" href="../css/login-style.css">
+    <!--Animate-->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!--Frame-->
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/Yiban.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="logo"><img src="../img/logo.png" alt="易班logo"></div>
+    <form class="form" id="login-form" action="../index.php" method="post">
+        <span id="login-inf">
+            <input class="text" name="username" id="username" type="text">
+            <input class="text" name="password" id="password" type="password">
+        </span><!--
+        --><span>
+            <input id="login-submit" type="submit" value="LOGIN">
+        </span>
+    </form>
+    <p class="remind"></p>
+</div>
+<!--Style-->
+<script type="text/javascript" src="../js/module.js"></script>
+<!--RegEx-->
+<script type="text/javascript" src="../js/login-script.js"></script>
+</body>
+</html>

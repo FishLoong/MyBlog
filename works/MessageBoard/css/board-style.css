@@ -1,0 +1,220 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:微软雅黑,serif;
+    font-size:14px;
+}
+span{
+    display:inline-block;
+}
+body{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:#dcdcdc;
+}
+.cover{
+    position:absolute;
+    visibility:hidden;
+    opacity:0;
+    z-index:10;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0, 0, 0, 0.25);
+}
+.menu{
+    position:absolute;
+    box-sizing:border-box;
+    width:0;
+    height:100%;
+    border-right:#888888 solid 1px;
+    background-color:#f4f4f4;
+    overflow:hidden;
+}
+.menu>div{
+    position:relative;
+    box-sizing:border-box;
+    width:100%;
+    height:40px;
+    border-bottom:#e5e5e5 solid 1px;
+    padding:7px 30px;
+}
+.menu>div+div:hover{
+    background-color:#e5e5e5;
+}
+#btn-back{
+    position:absolute;
+    right:0;
+    top:5px;
+    width:30px;
+    height:30px;
+    background:url(../img/back.png);
+    background-size:30px 30px;
+}
+.menu-img{
+    width:26px;
+    height:26px;
+}
+.menu-class{
+    position:absolute;
+    left:56px;
+    top:7px;
+    width:50%;
+    height:26px;
+    margin-left:7px;
+    overflow:hidden;
+    white-space:nowrap;
+    line-height:26px;
+}
+.submenu>.menu-class{
+    left:81px;
+}
+.submenu>.menu-img{
+    margin-left:25px;
+}
+#menu-message .menu-img{
+    background:url(../img/icons.png) 0 0;
+    background-size:364px 26px;
+}
+#menu-employ .menu-img{
+    background:url(../img/icons.png) 78px 0;
+    background-size:364px 26px;
+}
+#submenu-school .menu-img{
+    background:url(../img/icons.png) 338px 0;
+    background-size:364px 26px;
+}
+#submenu-online .menu-img{
+    background:url(../img/icons.png) 312px 0;
+    background-size:364px 26px;
+}
+#submenu-practice .menu-img{
+    background:url(../img/icons.png) 286px 0;
+    background-size:364px 26px;
+}
+#content{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow-y:scroll;
+}
+#header{
+    position:relative;
+    width:100%;
+    height:40px;
+    background-color:#3C6C9D;
+    color:#f4f4f4;
+}
+#btn-menu{
+    width:30px;
+    height:30px;
+    margin:5px;
+    background:url(../img/icons.png) 120px 0;
+    background-origin:content-box;
+    background-size:420px 30px;
+}
+#header>span:nth-child(2){
+    vertical-align:top;
+    height:30px;
+    margin:5px;
+    line-height:30px;
+    font-size:16px;
+}
+#main{
+    width:100%;
+    height:calc(100% - 40px);
+    background-color:#f4f4f4;
+    overflow-y:scroll;
+}
+#main>div{
+    position:relative;
+    width:100%;
+    height:70px;
+    border-bottom:#e0e0e0 solid 1px;
+}
+#main>div:hover{
+    background-color:#f0f0f0;
+}
+.inf-left{
+    position:relative;
+    width:20%;
+    height:100%;
+}
+.class-img{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:40px;
+    height:40px;
+    margin:auto;
+}
+.inf-message .class-img{
+    background:url(../img/icons.png) 0 0;
+    background-size:560px 40px;
+}
+.inf-practice .class-img{
+    background:url(../img/icons.png) 440px 0;
+    background-size:560px 40px;
+}
+.inf-online .class-img{
+    background:url(../img/icons.png) 480px 0;
+    background-size:560px 40px;
+}
+.inf-school .class-img{
+    background:url(../img/icons.png) 520px 0;
+    background-size:560px 40px;
+}
+.inf-right{
+    position:absolute;
+    display:table;
+    left:20%;
+    top:0;
+    width:80%;
+    height:100%;
+}
+.inf-right>span{
+    vertical-align:middle;
+    display:table-cell;
+    padding-bottom:15px;
+}
+.item-title{
+    left:5%;
+    width:95%;
+    max-height:30px;
+    line-height:15px;
+    overflow:hidden;
+}
+.item-note
+{
+    position:absolute;
+    bottom:2px;
+    height:20px;
+    line-height:20px;
+    font-size:12px;
+    color:#888888;
+}
+.item-note>span{
+    margin-right:5px;
+}
+.time-img{
+    width:20px;
+    height:20px;
+    background:url(../img/icons.png) 40px 0;
+    background-size:280px 20px;
+}
+.place-img{
+    width:20px;
+    height:20px;
+    background:url(../img/icons.png) 20px 0;
+    background-size:280px 20px;
+}
+.time-img+span,
+.place-img+span{
+    height:20px;
+    line-height:20px;
+    font-size:10px;
+    vertical-align:top;
+}

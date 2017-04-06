@@ -18,9 +18,9 @@ if(!(!!window.ActiveXObject||"ActiveXObject" in window)){
 			});
 			history.pushState("home","","fish.html");
 		}
-		if(fish.init.initModule("home")){
+		if(fish.init.initModule("work")){
 			setTimeout(function(){
-				fish.init.initAnimate("home");
+				fish.init.initAnimate("work");
 			},700);
 		}
 	}
