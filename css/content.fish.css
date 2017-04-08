@@ -34,6 +34,7 @@
 /*切换按钮*/
 .work>.main>.left{
 	position:relative;
+	vertical-align:top;
 	top:5%;
 	width:100px;
 	height:85%;
@@ -74,4 +75,30 @@
 }
 .underline-2{
 	top:55%;
+}
+.right{
+	position:relative;
+	top:5%;
+	width:calc(100% - 120px);
+	height:90%;
+	overflow:hidden;
+}
+.right>.toggle-1{
+	position:absolute;
+	top:-100%;
+	width:100%;
+	height:100%;
+	background-color:#3C6C9D;
+	transition:top .4s;
+}
+.right>.toggle-2{
+	position:absolute;
+	top:100%;
+	width:100%;
+	height:100%;
+	background-color:#333333;
+	transition:top .4s;
+}
+.right>.toggle-active{
+	top:0;
 }

@@ -1,4 +1,4 @@
-if(!(!!window.ActiveXObject||"ActiveXObject" in window)){
+if((!(!!window.ActiveXObject||"ActiveXObject" in window))&&("transition" in document.documentElement.style)){
 	window.onload=function(){
 		if("pushState" in history){
 			$(window).on("popstate",function(){

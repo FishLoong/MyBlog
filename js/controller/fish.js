@@ -23,19 +23,20 @@ $(function(global,$){
 				// 页面框架
 				// 目录页左边的切换按钮
 				$left.html("" +
-					"<div class='toggle toggle-active' id='bt-project'>项目</div>" +
-					"<div class='toggle' id='bt-effect'>特效</div>" +
+					"<div class='toggle toggle-active' data-type='project'>项目</div>" +
+					"<div class='toggle' data-type='effect'>特效</div>" +
 					"<span class='underline'></span>");
 				// 右边
 				$right.html("" +
-					"<div class='toggle toggle-active' id='ct-project'></div>" +
-					"<div class='toggle' id='ct-effect'></div>");
+					"<div class='toggle toggle-1 toggle-active' id='ct-project'></div>" +
+					"<div class='toggle toggle-2' id='ct-effect'></div>");
 				// 事件监听
 				// 切换点击事件
 				$left.find(".toggle").on("click",function(){
 					var $this=$(this),
 						$other=$left.find(".toggle").eq(!$left.find(".toggle").index($this)),
-						$underline=$(".underline");
+						$underline=$(".underline"),
+						$content=$right.find(".toggle");
 					// 显示变化
 					if(!$this.hasClass("toggle-active")){
 						$this.addClass("toggle-active");
@@ -46,20 +47,29 @@ $(function(global,$){
 						else{
 							$underline.addClass("underline-2");
 						}
-					}
-					alert($this.attr("id"));
-					// 数据变化
-					$.ajax({
-						url:"php/work.php",
-						type:"post",
-						contentType:"application/x-www-form-urlencoded;charset=utf-8",
-						data:{
-							"type":$this.attr("id")
-						},
-						success:function(msg){
-							console.log(msg);
+						if($content.eq(0).hasClass("toggle-active")){
+							$content.eq(0).removeClass("toggle-active");
+							$content.eq(1).addClass("toggle-active");
 						}
-					})
+						else{
+							$content.eq(1).removeClass("toggle-active");
+							$content.eq(0).addClass("toggle-active");
+						}
+					}
+					// 数据变化
+					$content.eq(0).off("transitionend").on("transitionend",function(){
+						$.ajax({
+							url:"php/work.php",
+							type:"post",
+							contentType:"application/x-www-form-urlencoded;charset=utf-8",
+							data:{
+								"type":$this.data("type")
+							},
+							success:function(msg){
+
+							}
+						});
+					});
 				});
 				$main.append($left).append($right);
 			}
